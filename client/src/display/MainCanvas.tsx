@@ -39,9 +39,9 @@ const MainCanvas = () => {
   const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       const { canvas } = JSON.parse(savedTheme);
-      return canvas || "white"; // fallback
+      return canvas || "#ffffff"; // fallback
     }
-    return "white"; // default
+    return "#ffffff"; // default
   });
 
   const [isResizing, setIsResizing] = useState(false);
