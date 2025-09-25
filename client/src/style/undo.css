@@ -1,0 +1,11 @@
+
+.undo {
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    background-color: var(--bg-color);
+}
+.undo:hover {
+    background: gray;;
+
+}

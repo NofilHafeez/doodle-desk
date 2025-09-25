@@ -1,0 +1,47 @@
+/* ToolBar container */
+.toolbar {
+  background-color: var(--bg-color);
+  position: fixed;        /* stays in place */
+  top: 6%;               /* adjust for smaller screens */
+  left: 50%;             /* center horizontally */
+  transform: translate(-50%, -50%);      /* white background like Excalidraw */ /* rounded edges */
+  display: flex;
+  flex-direction: row; /* stack buttons vertically */
+  /* gap: 5px;    */
+  border: 1px solid var(--text-color);
+  flex-shrink: 0;            /* space between buttons */
+  z-index: 100;          /* ensure it's above the canvas */
+}
+
+/* Buttons */
+.toolbar-button {
+  border: none;
+  padding: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.select{
+  margin-right: -3px;
+}
+
+.lock {
+  border-right: 1px solid var(--text-color);
+}
+
+.toolbar-button:hover {
+  background: gray;
+}
+
+.toolbar-button:active {
+  background: #d5d5d5;
+}
+
+.toolbar-button.selected {
+  background: #4a90e2;    /* blue highlight for active tool */
+  color: #fff;
+}
+
+

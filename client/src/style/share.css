@@ -1,0 +1,55 @@
+.blue-button{
+    background-color: rgb(120, 120, 250);
+    outline: none;
+    border: 1px solid var(--text-color);
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+}
+ .blue-button:hover{
+    background-color: rgb(186, 170, 255);
+ }
+
+
+ .red-button{
+    background-color: rgb(250, 64, 64);
+    outline: none;
+    border: 1 solid black;
+    padding: 10px 15px 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+ .red-button:hover{
+    background-color: rgb(247, 97, 104);
+ }
+
+  .close{
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+ input {
+    padding: 10px;
+    background-color: rgb(211, 211, 211);
+    outline: none;
+    border: 1 solid black;
+ }
+
+
+ .content {
+    position: fixed;
+    transform: translate(-860px, 100px);
+    width: 500px;
+    background-color: rgb(99, 185, 255);
+    padding: 30px;
+    border: 1px solid var(--text-color);
+ }
+
+ h1 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 25px;
+ }

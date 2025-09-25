@@ -1,0 +1,31 @@
+/* Default (Light Mode) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #2196f3;
+  --card-bg: #f5f5f5;
+}
+
+/* Dark Mode */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #90caf9;
+  --card-bg: #1e1e1e;
+}
+
+/* Apply to common elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+button {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+h1 {
+  color: var(--text-color);
+}
