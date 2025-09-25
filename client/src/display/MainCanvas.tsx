@@ -12,6 +12,7 @@ import { useCanvasResize } from '../hooks/useCanvasResize';
 import { useHistoryShortcuts } from '../hooks/useHistoryShortcuts';
 import { useCursor } from '../hooks/useCursor';
 import { useShapeEditing } from '../hooks/useShapeEditing';
+import type { EditableText } from '../type/drawable';
 
 
 const socket = io(import.meta.env.VITE_BACKEND_URL, {
@@ -138,7 +139,10 @@ useEffect(() => {
       
       if (userText !== null) {
         // 1. Update the shape
-        clicked.shape.editText(userText);
+        if (clicked.shape instanceof Text) {
+  (clicked.shape as EditableText).editText(userText);
+}
+
         canvasInstanceRef.current!.draw();
 
         // 2. Update local state (replace shape by id)

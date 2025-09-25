@@ -17,14 +17,9 @@ export interface Drawable {
     getHandles(): {name: string; x: number; y: number; }[];
     move(dx: number, dy: number): void;
     resize(handle: string, mouseX: number, mouseY: number): void;
-    // editText?(text: string): void;
+    editText?(text: string): void;
 }
 
-// export type ShapeType = "circle" | "rectangle" | "diamond" | "line" | "text";
-
-
-// export interface ShapeInterface {
-//   id: number;
-//   shape: SerializedShapeData;
-//   type: ShapeType;
-// }
+export interface EditableText extends Drawable {
+  editText(text: string): void;
+}

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 export const useCursor = (
   buttonTool: string,
-  canvasRef: React.RefObject<HTMLCanvasElement> | null,
+  canvasRef: React.RefObject<HTMLCanvasElement  | null> ,
 ) => {
   useEffect(() => {
     const cursorMap: Record<string, string> = {

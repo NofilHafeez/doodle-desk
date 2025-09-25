@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Canvas } from "../classes/drawing/canvas";
 
 export const useCanvasResize = (
-  canvasRef: React.RefObject<HTMLCanvasElement> | null,
+  canvasRef: React.RefObject<HTMLCanvasElement | null> ,
   canvasInstanceRef: React.MutableRefObject<Canvas | null>
 ) => {
   useEffect(() => {

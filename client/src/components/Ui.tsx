@@ -36,7 +36,7 @@ interface UIProps {
 
   undo: () => void;
   redo: () => void;
-  canvasRef: React.RefObject<HTMLCanvasElement> | null;
+  canvasRef: React.RefObject<HTMLCanvasElement  | null>;
 }
 
 const UI: React.FC<UIProps> = ({

@@ -4,11 +4,11 @@ import { HistoryManager } from "../classes/historyManager/storage";
 import type { ShapeInterface } from "../type/shapes";
 
 export const useCanvasInit = (
-  canvasRef: React.RefObject<HTMLCanvasElement>  | null,
+  canvasRef: React.RefObject<HTMLCanvasElement | null>,
   canvasInstanceRef: React.MutableRefObject<Canvas | null>,
   historyManagerRef: React.MutableRefObject<HistoryManager | null>,
   setShapes: React.Dispatch<React.SetStateAction<ShapeInterface[]>>,
-  pushSnapshot: (snapshot?: ShapeInterface[]) => void
+  pushSnapshot: (snapshot?: ShapeInterface[]) => void 
 ) => {
   useEffect(() => {
     if (!canvasRef?.current || canvasInstanceRef.current) return;
