@@ -1,14 +1,10 @@
-// services/gemini.ts
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const apiKey = "AIzaSyAE23xoltgfj0_Ly6acD65SSS24vZ4N6AM";
-const genAI = new GoogleGenerativeAI(apiKey);
-
+// frontend/services/gemini.ts
 export async function askGemini(prompt: string) {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
-  const result = await model.generateContent(prompt);
-  if (!result) {
-    alert(result)
-  }
-  return result.response.text();
+  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/gemini`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt }),
+  });
+  const data = await res.json();
+  return data.response;
 }

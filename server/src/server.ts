@@ -1,14 +1,33 @@
+import dotenv from "dotenv";
+
+dotenv.config();
+
 import express, { Request, Response } from "express";
 import { createServer } from "http";
+import cors from "cors";
 import { Server } from "socket.io";
+import geminiRouter from "./routes/gemini";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors({
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true,
+}));
+
+
+app.use(express.json());
+app.use("/api/gemini", geminiRouter);
+
+
 const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -71,13 +90,11 @@ socket.on("clear-canvas", (roomId) => {
   io.to(roomId).emit("take-clear-canvas", []);
 });
 
-
-
-
   socket.on("disconnect", () => {
     console.log("user disconnected", socket.id);
   });
 });
+
 
 httpServer.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -14,7 +14,7 @@ import { useCursor } from '../hooks/useCursor';
 import { useShapeEditing } from '../hooks/useShapeEditing';
 
 
-const socket = io("http://localhost:5000", {
+const socket = io(import.meta.env.VITE_BACKEND_URL, {
   transports: ["websocket"],
   withCredentials: true,
   autoConnect: false,
