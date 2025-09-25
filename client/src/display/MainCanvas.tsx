@@ -41,7 +41,7 @@ const MainCanvas = () => {
       const { canvas } = JSON.parse(savedTheme);
       return canvas || "#ffffff"; // fallback
     }
-    return "#ffffff"; // default
+    return ""; // default
   });
 
   const [isResizing, setIsResizing] = useState(false);

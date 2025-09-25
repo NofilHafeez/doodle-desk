@@ -13,7 +13,7 @@ export function useTheme(
     }
     return "light"; // default
   });
-
+ 
   // On mount → apply saved theme & canvas color
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -25,7 +25,7 @@ export function useTheme(
       document.body.classList.add(theme === "dark" ? "dark-mode" : "light");
     } else {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setTheme("dark");
+        setTheme("light");
         document.body.classList.add("dark-mode");
       }
     }
