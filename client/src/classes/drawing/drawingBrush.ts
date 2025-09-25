@@ -1,4 +1,5 @@
 import type { Drawable } from "../../type/drawable";
+import { Shape } from "../shape";
 
 export class drawingBrush implements Drawable {
   points: { x: number; y: number }[];
@@ -63,17 +64,18 @@ export class drawingBrush implements Drawable {
   }
 
   // selection box logic separated
-  drawSelectionBox(ctx: CanvasRenderingContext2D, _camera: { x: number; y: number; scale: number }): void {
+  drawSelectionBox(ctx: CanvasRenderingContext2D, camera: { x: number; y: number; scale: number }): void {
     const { minX, minY, maxX, maxY } = this.getBounds();
 
     ctx.save();
     ctx.strokeStyle = "blue";
-    ctx.setLineDash([4, 2]);
+    // ctx.setLineDash([4, 2]);
     ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
 
-    const size = 8;
+    const size = Shape.HANDLE_SIZE / camera.scale;
     ctx.fillStyle = "white";
     ctx.setLineDash([]);
+     ctx.lineWidth = 1 / camera.scale; 
     for (const h of this.getHandles()) {
       ctx.fillRect(h.x - size / 2, h.y - size / 2, size, size);
       ctx.strokeRect(h.x - size / 2, h.y - size / 2, size, size);

@@ -62,7 +62,7 @@ export class Text implements Drawable {
     const bottom = this.getBottom();
 
     ctx.strokeStyle = "blue";
-    ctx.setLineDash([4, 2]);
+    // ctx.setLineDash([4, 2]);
     ctx.lineWidth = 1 / camera.scale;
 
    const width = right - left;
