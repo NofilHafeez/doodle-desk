@@ -4,7 +4,9 @@ export async function askGemini(prompt: string) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ prompt }),
+    credentials: "include",
   });
   const data = await res.json();
   return data.response;
 }
+ 
