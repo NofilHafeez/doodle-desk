@@ -19,8 +19,11 @@ export function useTheme(
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       const { theme, canvas } = JSON.parse(savedTheme);
+
+      const normalized = /^#([0-9a-f]{8})$/i.test(canvas) ? "#" + canvas.slice(1, 7) : canvas
+      
       setTheme(theme);
-      setChangeCanvasColor(canvas);
+      setChangeCanvasColor(normalized);
       document.body.classList.remove("light", "dark-mode");
       document.body.classList.add(theme === "dark" ? "dark-mode" : "light");
     } else {

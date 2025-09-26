@@ -40,7 +40,7 @@ const MainCanvas = () => {
     if (savedTheme) {
       const { canvas } = JSON.parse(savedTheme);
       return canvas || "#ffffff"; // fallback
-    }
+    } 
     return ""; // default
   });
 
