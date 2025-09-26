@@ -66,7 +66,7 @@ const handleCanvasColor = () => {
     setChangeColor("black")
     setChangeColorFill("")
 
-  }
+  } 
 }
 
   return (
@@ -76,7 +76,7 @@ const handleCanvasColor = () => {
       <div>
         <h2 className="section-title">Stroke</h2>
         <div className='color-btn-stroke'>
-          <button onClick={() => setChangeColor("#1971c2")} className="color-btn st1" aria-label="Blue Stroke"/>
+          <button onClick={() => setChangeColor("#1971c2")} className="color-btn st1" aria-label="Blue Stroke"/>  
           <button onClick={() => setChangeColor("#e03131")} className="color-btn st2" aria-label="Red Stroke"/>
           <button onClick={() => setChangeColor("#f08c00")} className="color-btn st3" aria-label="Orange Stroke"/>
             <div className='relative-p'>
@@ -154,9 +154,9 @@ const handleCanvasColor = () => {
         <div
         className='canvas'>
         <button onClick={() => setChangeCanvasColor("white")} className="stroke-btn bg5" aria-label="Canvas Dark"/>
-        <button onClick={() => setChangeCanvasColor("#f7fec6ff")} className="stroke-btn bg6" aria-label="Canvas Gray"/>
-        <button onClick={() => setChangeCanvasColor("#fce2e2ff")} className="stroke-btn bg7" aria-label="Canvas Dark Gray"/>
-        <button onClick={() => setChangeCanvasColor("#e2ffe5ff")} className="stroke-btn bg8" aria-label="Canvas Green"/>
+        <button onClick={() => setChangeCanvasColor("#f7fec6")} className="stroke-btn bg6" aria-label="Canvas Gray"/>
+        <button onClick={() => setChangeCanvasColor("#fce2e2")} className="stroke-btn bg7" aria-label="Canvas Dark Gray"/>
+        <button onClick={() => setChangeCanvasColor("#e2ffe5")} className="stroke-btn bg8" aria-label="Canvas Green"/>
           -<input  type='color' className="color-btn picker" aria-label="picker Stroke" value={changeCanvasColor} style={{backgroundColor: changeCanvasColor}}  onChange={(e) => setChangeCanvasColor(e.target.value)}/>
           {/* </div> */}
         </div> : 
@@ -164,7 +164,7 @@ const handleCanvasColor = () => {
           <button onClick={() => setChangeCanvasColor("#121212")} className="stroke-btn bg1" aria-label="Canvas Dark"/>
         <button onClick={() => setChangeCanvasColor("#222")} className="stroke-btn bg2" aria-label="Canvas Gray"/>
         <button onClick={() => setChangeCanvasColor("#2e2e2e")} className="stroke-btn bg3" aria-label="Canvas Dark Gray"/>
-        <button onClick={() => setChangeCanvasColor("#000b01ff")} className="stroke-btn bg4" aria-label="Canvas Green"/>
+        <button onClick={() => setChangeCanvasColor("#000b01")} className="stroke-btn bg4" aria-label="Canvas Green"/>
           -   <input  type='color' className="color-btn picker" aria-label="picker Stroke" value={changeCanvasColor} style={{backgroundColor: changeCanvasColor}}  onChange={(e) => setChangeCanvasColor(e.target.value)}/>
 
           </div>
