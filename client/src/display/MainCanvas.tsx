@@ -211,10 +211,10 @@ useEffect(() => {
 
 
   if (lock === "Unlock" && isDragging) {
-    console.log('a')
+    // console.log('a')
       setButtonTool("Select")
     } else  {
-    console.log('t')
+    // console.log('t')
 
         setButtonTool(buttonTool)
     }
@@ -276,7 +276,7 @@ useEffect(() => {
 
   const latest = shapes[shapes.length - 1];
   socket.emit("drawing", Helper.serializeShape(latest));
-  console.log(shapeCreated)
+  // console.log(shapeCreated)
 }, [shapeCreated, roomId]);
 
 

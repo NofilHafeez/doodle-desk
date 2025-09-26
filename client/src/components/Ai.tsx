@@ -103,7 +103,7 @@ setLoading(false)
         shapes
           .filter((s: ShapeInterface) => supported.includes(s.type))
           .forEach((s: ShapeInterface) => Helper.addShape(s, canvasInstance, setShapeCreated));
-          console.log(shapes)
+          // console.log(shapes)
       } else {
         throw new Error("No valid JSON array found in the response.");
       }

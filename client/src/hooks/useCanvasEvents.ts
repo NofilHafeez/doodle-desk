@@ -42,7 +42,7 @@ export const handleMouseDown = (
       setdeleteShape(shape.id)
 
         if (socket.connected && roomId) {
-          console.log(shape.id)
+          // console.log(shape.id)
           socket.emit("delete-shape",  shape.id );
     }
       }
@@ -60,7 +60,7 @@ export const handleMouseDown = (
       setSelectedShapeId(hit.id);
       setIsResizing(true);
       setIsMoving(false);
-      console.log(hit)
+      // console.log(hit)
       activeHandleRef.current = handle;
       canvasRef.current!.style.cursor = getCursorForHandle(handle);
 
