@@ -1,19 +1,19 @@
 # 🎨 Collaborative UML Drawing Tool
 
 A **real-time collaborative canvas application** built with **React (Vite + TypeScript)** and **Node.js (Express + Socket.IO)**.  
-It allows users to **draw, edit, and collaborate** on shapes, UML diagrams, and custom canvases with **AI-powered UML generation** using **Google Gemini API**.  
+It allows users to **draw, edit, and collaborate** on shapes, UML diagrams, and custom canvases with **AI-powered UML generation** using the **Google Gemini API**.  
 
 ---
 
 ## ✨ Features
 
-- 🖌 **Drawing Tools**  
+- 🖌 **Drawing Tools**
   - Circle, Rectangle, Diamond, Line  
   - Text tool, Freehand drawing brush  
   - Hand tool & Selection tool  
   - Eraser tool  
 
-- 🎨 **Shape Management**  
+- 🎨 **Shape Management**
   - Lock & unlock shapes  
   - Edit attributes (color, stroke, size, text)  
   - Move & resize shapes  
@@ -21,23 +21,23 @@ It allows users to **draw, edit, and collaborate** on shapes, UML diagrams, and 
   - Shape layering system *(planned)*  
   - Grouping and multi-shape selection *(planned)*  
 
-- 🌓 **Canvas Options**  
+- 🌓 **Canvas Options**
   - Custom theme support  
   - Dark & Light mode  
   - Zooming functionality  
 
-- 🤖 **AI Integration**  
+- 🤖 **AI Integration**
   - Generate **UML Class Diagrams** using **Gemini API**  
 
-- ⚡ **Collaboration**  
+- ⚡ **Collaboration**
   - Real-time updates with **Socket.IO**  
   - Multiple users can draw/edit simultaneously  
-  - (Currently works locally, cloud deployment planned)  
+  - *(Currently works locally, cloud deployment planned)*  
 
-- 📱 **Upcoming Improvements**  
+- 📱 **Upcoming Improvements**
   - Mobile & tablet responsive UI  
   - Shape grouping & advanced editing  
-  - UI interface for better user interaction  
+  - Better UI interface for interaction  
 
 ---
 
@@ -60,23 +60,25 @@ It allows users to **draw, edit, and collaborate** on shapes, UML diagrams, and 
 ---
 
 ## 📂 Project Structure
+
+```bash
 frontend/
 │── src/
-│ ├── components/ # UI components (toolbar, canvas, modals, etc.)
-│ ├── hooks/ # Custom hooks
-│ ├── utils/ # Helper & utility functions
-│ ├── classes/ # OOP classes: Shape, Circle, Rectangle, Line, Diamond, Text, DrawingBrush
-│ ├── history/ # HistoryManager & ShapeHistory (undo/redo)
-│ ├── App.tsx
-│ └── main.tsx
+│   ├── components/   # UI components (toolbar, canvas, modals, etc.)
+│   ├── hooks/        # Custom hooks
+│   ├── utils/        # Helper & utility functions
+│   ├── classes/      # OOP classes: Shape, Circle, Rectangle, Line, Diamond, Text, DrawingBrush
+│   ├── history/      # HistoryManager & ShapeHistory (undo/redo)
+│   ├── App.tsx
+│   └── main.tsx
 │── package.json
 
 backend/
 │── src/
-│ ├── server.ts # Express + Socket.IO server
-│ ├── routes/ # API endpoints
-│ ├── services/ # AI service integration (Gemini)
-│ └── utils/ # Backend helpers
+│   ├── server.ts     # Express + Socket.IO server
+│   ├── routes/       # API endpoints
+│   ├── services/     # AI service integration (Gemini)
+│   └── utils/        # Backend helpers
 │── package.json
 
 ---
