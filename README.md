@@ -44,12 +44,10 @@ It allows users to **draw, edit, and collaborate** on shapes, UML diagrams, and 
 ## 🛠 Tech Stack
 
 ### **Frontend**
-- ⚛️ React 19 + TypeScript  
-- 🎨 Tailwind CSS (custom themes)  
+- ⚛️ React + TypeScript  
+- 🎨 CSS (custom themes)  
 - ⚡ Vite for bundling  
-- 🔗 React Router DOM  
-- 🔌 Socket.IO client  
-- 🤖 @google/generative-ai  
+- 🔌 Socket.IO client   
 
 ### **Backend**
 - 🌐 Express.js (TypeScript)  
@@ -62,33 +60,47 @@ It allows users to **draw, edit, and collaborate** on shapes, UML diagrams, and 
 ## 📂 Project Structure
 
 ```bash
-frontend/
-│── src/
-│   ├── components/   # UI components (toolbar, canvas, modals, etc.)
-│   ├── hooks/        # Custom hooks
-│   ├── utils/        # Helper & utility functions
-│   ├── classes/      # OOP classes: Shape, Circle, Rectangle, Line, Diamond, Text, DrawingBrush
-│   ├── history/      # HistoryManager & ShapeHistory (undo/redo)
-│   ├── App.tsx
-│   └── main.tsx
-│── package.json
+doodle-desk/
+├── client/               # Front-end application
+├── server/               # Back-end application
+├── package.json          # For managing both (if using a monorepo setup)
+└── README.md             # Project documentation
 
-backend/
-│── src/
-│   ├── server.ts     # Express + Socket.IO server
-│   ├── routes/       # API endpoints
-│   ├── services/     # AI service integration (Gemini)
-│   └── utils/        # Backend helpers
-│── package.json
+client/
+├── node_modules/
+├── public/
+├── src/
+│   ├── assets/           # Static assets like images and fonts
+│   ├── classes/          # Class-based logic or utilities
+│   ├── components/       # Reusable UI components
+│   ├── display/          # Page-level components/views
+│   ├── hooks/            # Custom React Hooks
+│   ├── services/         # API calls and external services
+│   ├── style/            # Global or theme-specific styles
+│   ├── type/             # TypeScript definition files
+│   ├── App.tsx           # Main application component
+│   ├── index.css         # Global styles
+│   └── main.tsx          # Entry point for the React application
+├── package.json
+└── ... other config files
 
+server/
+├── node_modules/
+├── src/                  # Server source code (controllers, routes, models, etc.)
+├── .env                  # Environment variables (IGNORED by .gitignore)
+├── package.json          # Project dependencies and scripts
+├── package-lock.json     # Specific dependency tree
+├── tsconfig.json
+
+```
 ---
 
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone Repository
 
-git clone https://github.com/your-username/collaborative-uml-tool.git
-cd collaborative-uml-tool
+git clone https://github.com/NofilHafeez/doodle-desk.git
+cd doodle-desk
 
 ### 2️⃣ Setup Frontend
 cd client
@@ -107,55 +119,34 @@ GEMINI_API_KEY=your_api_key_here
 
 ### 🖥 Usage
 
-Open frontend (http://localhost:5173)
-
-Start drawing shapes or UML diagrams
-
-Use AI Tool to auto-generate UML class diagrams
-
-Collaborate in real-time with multiple users
+- Open frontend (https://doodledesk.vercel.app/)
+- Start drawing shapes or UML diagrams
+- Use AI Tool to auto-generate UML class diagrams
+- Collaborate in real-time with multiple users
 
 ### 🔮 Future Roadmap
 
-✅ Mobile & tablet responsive design
-
-✅ Layering system for shapes
-
-✅ Multiple shape selection & grouping
-
-✅ Export canvas as image / PDF
-
-✅ Cloud deployment for collaboration
+- ✅ Mobile & tablet responsive design
+- ✅ Layering system for shapes
+- ✅ Multiple shape selection & grouping
+- ✅ Export canvas as image / PDF
+- ✅ Cloud deployment for collaboration
 
 ### 🧑‍💻 Development (OOP Structure)
 
 This project is structured in Object-Oriented Programming (OOP):
-
-Shape (base class)
-
-Circle, Rectangle, Line, Diamond, Text (inherit Shape)
-
-DrawingBrush (freehand tool)
-
-HistoryManager (undo/redo system)
-
-ShapeHistory (stores shape states)
-
-Utils & Helpers for reusable logic
-
-Encapsulation, abstraction, and clean design principles are followed for scalability.
+- Shape (base class)
+- Circle, Rectangle, Line, Diamond, Text (inherit Shape)
+- DrawingBrush (freehand tool)
+- HistoryManager (undo/redo system)
+- ShapeHistory (stores shape states)
+- Utils & Helpers for reusable logic
 
 ### 🤝 Contributing
+- Fork the project
+- Create your feature branch (git checkout -b feature/AmazingFeature)
+- Commit your changes (git commit -m 'Add AmazingFeature')
+- Push to the branch (git push origin feature/AmazingFeature)
+- Open a Pull Request
 
-Fork the project
-
-Create your feature branch (git checkout -b feature/AmazingFeature)
-
-Commit your changes (git commit -m 'Add AmazingFeature')
-
-Push to the branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-```bash
 
