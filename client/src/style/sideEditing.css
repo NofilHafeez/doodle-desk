@@ -1,0 +1,266 @@
+.sideEditing {
+  display: flex;
+  flex-direction: column;
+  align-items:self-start;
+  gap: 10px;
+  padding: 14px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--text-color);
+  width: auto;
+}
+
+
+.section-title {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  /* display: flex; */
+  text-align: left;
+
+}
+
+
+
+.color-btn {
+  width: 25px;
+  height: 25px;
+  margin: 2px;
+  /* border: 1px solid; */
+  /* background-color: blue; */
+  cursor: pointer;
+  border: 1px solid var(--text-color);
+  transition: all 0.2s ease;
+}
+
+.blue {
+  background-color: #1971c2;
+  margin: 0;
+
+}
+
+.red {
+  background-color: #e03131;
+  margin: 0;
+
+}
+
+.orange{
+  background-color: #f08c00;
+  margin: 0;
+}
+
+.transparent{
+  background-color: transparent;
+  margin: 0;
+
+
+}
+
+
+.st1 {
+  background-color: #1971c2;
+  margin: 0;
+
+}
+
+.st2 {
+  background-color: #e03131;
+  margin: 0;
+
+}
+
+.st3 {
+  background-color: #f08c00;
+  margin: 0;
+
+
+}
+
+.picker {
+  -webkit-appearance: none; /* remove default WebKit styles */
+  -moz-appearance: none;    /* remove default Firefox styles */
+  appearance: none;
+
+  background-color: var(--bg-color);
+  margin: 0;
+  /* border: 0px 1px 0 0 #222 ; */
+
+}
+
+.color-btn.picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-btn.picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 6px; /* same as parent */
+}
+
+.color-btn-stroke{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.color-btn-fill{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.horizontal-slider {
+  writing-mode:horizontal-tb;   /* vertical from bottom to top */
+  -webkit-appearance: slider-horizontal; /* for WebKit */
+  width: 90px;
+  cursor: pointer;
+}
+
+.clear{
+  width: 100%;
+  outline: none;
+  margin-top: 4px;
+  cursor: pointer;
+  border: 1px solid var(--text-color);
+}
+
+
+.stroke-btn {
+  width: 25px;
+  height: 25px;
+  margin: 2px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--text-color);
+}
+
+
+.mode-switcher {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.mode-btn {
+  padding: 5px 10px;
+  border: 1px solid var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.mode-btn:hover {
+  background-color: gray;
+}
+
+.mode-btn.active {
+  background-color: #2196f3; /* highlight color */
+  color: white;
+  border-color: #2196f3;
+}
+
+
+.stroke-btn.dashed { 
+  border-top: 2px dashed var(--text-color);
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin:5px ;
+  /* display: inline-block; */
+  /* background-color: #1971c2; */
+  height: 0px;
+}
+
+.stroke-box {
+  border: 1px solid var(--text-color);
+  width: fit-content;
+  height: 22px;
+  /* background-color: #204624; */
+  margin-top: 3px;
+  display: inline-block;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+/* Dotted preview button */
+.stroke-btn.dotted {
+  border-top: 2px dotted var(--text-color);
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+    margin:5px ;
+
+  height: 0px;
+
+
+}
+
+.relative-p{
+  position: relative;
+}
+.canvas {
+  display: flex;
+  align-items: center;
+}
+
+.icon-p{
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  right: 4px;
+  top: 3px;
+}
+
+
+.bg1 {
+  background-color: #121212;
+}
+
+.bg2 {
+  background-color: #222;
+}
+
+.bg3 {
+  background-color: #2e2e2e;
+}
+
+.bg4 {
+  background-color: #000b01;
+}
+
+
+.bg5 {
+  background-color: white;
+}
+
+.bg6 {
+  background-color: #f7fec6;
+}
+
+.bg7 {
+  background-color: #fce2e2;
+}
+
+.bg8 {
+  background-color: #e2ffe5;
+}
+
+
+.color-btn:hover {
+  transform: scale(1.1);
+  /* border-color: #888; */
+  
+}
+
+
+.stroke-btn:hover {
+  transform: scale(1.1);
+  /* border-color: #888; */
+} 
