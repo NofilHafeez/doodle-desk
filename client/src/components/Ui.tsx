@@ -73,6 +73,7 @@ const UI: React.FC<UIProps> = ({
           setButtonTool={setButtonTool}
           setlock={setlock}
           lock={lock}
+          buttonTool={buttonTool}
         />
       </header>
 

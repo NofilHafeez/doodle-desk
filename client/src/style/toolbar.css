@@ -3,7 +3,7 @@
   background-color: var(--bg-color);
   position: fixed;        /* stays in place */
   top: 6%;               /* adjust for smaller screens */
-  left: 50%;             /* center horizontally */
+  left: 50%;             /*  center horizontally */
   transform: translate(-50%, -50%);      /* white background like Excalidraw */ /* rounded edges */
   display: flex;
   flex-direction: row; /* stack buttons vertically */
