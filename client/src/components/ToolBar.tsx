@@ -15,7 +15,7 @@ interface ToolBarProps {
 
 const ToolBar= ({setButtonTool, canvasInstance, setShapeCreated, setlock, lock, buttonTool}: ToolBarProps) => {
   // console.log(canvasInstance)
-  const [bgColor, setBgColor] = useState('gray');
+  const [bgColor, setBgColor] = useState('');
   const [active, setActive] = useState(false)
 
 
@@ -24,7 +24,7 @@ const ToolBar= ({setButtonTool, canvasInstance, setShapeCreated, setlock, lock, 
     if (lock === "Unlock" || lock === "Lock") {
     if (active === false && buttonTool === 'Select') {
       setActive(true)
-      // setBgColor('gray')
+      setBgColor('gray')
     } else if (active === false && buttonTool === 'Hand') {
       setActive(false)
       // setBgColor('gray')
