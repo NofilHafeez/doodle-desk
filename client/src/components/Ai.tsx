@@ -93,11 +93,9 @@ User: ${prompt}`);
 setLoading(false)
 
 
-
-
-
   // setLoading(true) 
     try {
+      // console.log (response)
       const jsonMatch = response.match(/\[.*?\]/s);
 
       if (jsonMatch && jsonMatch[0]) {

@@ -30,6 +30,8 @@ export const handleMouseDown = (
   const canvas = canvasRef.current;
   if (!canvas) return;
 
+  if (setSelectedShapeId) setSelectedShapeId(0);
+
   const { x: worldX, y: worldY } = Helper.getWorldMousePos(event, canvas, canvasInstance.camera);
   startPosRef.current = { x: worldX, y: worldY };
   (startPosRef as any).screen = { x: event.clientX, y: event.clientY };

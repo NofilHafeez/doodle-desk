@@ -1,5 +1,6 @@
 // frontend/services/gemini.ts
 export async function askGemini(prompt: string) {
+  console.log(import.meta.env.VITE_BACKEND_URL)
   const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/gemini`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -7,6 +8,7 @@ export async function askGemini(prompt: string) {
     credentials: "include",
   });
   const data = await res.json();
+  console.log(data.response);
   return data.response;
 }
  
