@@ -183,6 +183,3 @@ getHandles() {
   }
 }
 
-
-// Shirley Musk
-// Karolayn_Matos

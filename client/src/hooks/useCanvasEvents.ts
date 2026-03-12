@@ -117,7 +117,6 @@ export const handleMouseMove = (
   deleteShape: number,
   socket: Socket,
   roomId: string,
-  setChangeStroke: (changeStroke: number | string) => void
 ) => {
   if (!isDragging || !startPosRef.current) return;
   const canvas = canvasRef.current;
@@ -203,9 +202,7 @@ export const handleMouseMove = (
       break;
     }
     case "Draw": {
-      if (changeStroke) {
-        setChangeStroke(1);
-      }
+
 
       canvasInstance.updateBrush(worldX, worldY);
         break;

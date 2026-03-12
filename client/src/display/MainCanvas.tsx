@@ -191,7 +191,7 @@ useEffect(() => {
         canvasInstanceRef.current!, changeColor, changeStroke,
         changeColorFill, changeStrokeStyle, selectedShapeId,
         isResizing, isMoving, activeHandleRef,
-        deleteShape,  socket, roomId, setChangeStroke
+        deleteShape,  socket, roomId
       );
 
      
