@@ -3,14 +3,17 @@ import { useEffect } from "react";
 export const useHistoryShortcuts = (undo: () => void, redo: () => void) => {
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.key === "z") {
-        e.preventDefault();
-        undo();
-      } else if (e.ctrlKey && e.key === "y") {
-        e.preventDefault();
-        redo();
-      }
-    };
+  const ctrlOrCmd = e.ctrlKey || e.metaKey;
+
+  if (ctrlOrCmd && e.shiftKey && e.key.toLowerCase() === "z") {
+    e.preventDefault();
+    redo();
+  } 
+  else if (ctrlOrCmd && e.key.toLowerCase() === "z") {
+    e.preventDefault();
+    undo();
+  }
+};
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, [undo, redo]);
