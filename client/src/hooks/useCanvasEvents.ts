@@ -117,6 +117,7 @@ export const handleMouseMove = (
   deleteShape: number,
   socket: Socket,
   roomId: string,
+  setChangeStroke: (changeStroke: number | string) => void
 ) => {
   if (!isDragging || !startPosRef.current) return;
   const canvas = canvasRef.current;
@@ -202,51 +203,13 @@ export const handleMouseMove = (
       break;
     }
     case "Draw": {
-      // const strokeSeg = new drawingBrush(
-      //   // startPosRef.current.x, // WORLD
-      //   // startPosRef.current.y, // WORLD
-      //   worldX,
-      //   worldY,
-      //   changeColor,
-      //   changeStroke
-      // );
-      // drawPreview(ctx => strokeSeg.draw(ctx));
+      if (changeStroke) {
+        setChangeStroke(1);
+      }
 
-      // // persist stroke in WORLD
-      // canvasInstance.do_drawing(
-      //   // startPosRef.current.x,
-      //   // startPosRef.current.y,
-      //   worldX,
-      //   worldY,
-      //   changeColor,
-      //   changeStroke
-      // );
-      // startPosRef.current = { x: worldX, y: worldY };
-
-  //       let currentBrush = canvasInstance.currentBrush;
-
-  // // If starting a new stroke
-  // if (!currentBrush) {
-  //   currentBrush = new drawingBrush(
-  //     startPosRef.current.x,
-  //     startPosRef.current.y,
-  //     changeColor,
-  //     changeStroke
-  //   );
-  //   canvasInstance.currentBrush = currentBrush;
-  //   canvasInstance.addShape(currentBrush); // store it in shapes
-  // }
-
-  // // Add new point
-  // currentBrush.addPoint(worldX, worldY);
-
-  // // Redraw
-  // canvasInstance.clear();
-  // canvasInstance.draw();
-
-    canvasInstance.updateBrush(worldX, worldY);
-      break;
-    }
+      canvasInstance.updateBrush(worldX, worldY);
+        break;
+      }
     case "Eraser": {
       const shape = canvasInstance.findShapeAt(worldX, worldY);
       if (shape && deleteShape) {

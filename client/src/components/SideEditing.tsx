@@ -118,17 +118,25 @@ const handleCanvasColor = () => {
 
 
       {/* Stroke Style */}
-      <div>
+      <div >
         <h2 className="section-title">Stroke Style</h2>
-        <div className="stroke-box">
+        <div className='stroke-section'>
+        <div onClick={() => setChangeStrokeStyle([5, 5])} className="stroke-box">
           <button onClick={() => setChangeStrokeStyle([5, 5])} className="stroke-btn dashed" aria-label="Dashed"/>
         </div>
-        <div className="stroke-box">
+        <div onClick={() => setChangeStrokeStyle([1, 3])} className="stroke-box">
           <button onClick={() => setChangeStrokeStyle([1, 3])} className="stroke-btn dotted" aria-label="Dotted"/>
+        </div>
+        <div onClick={() => setChangeStrokeStyle([])} className="stroke-box-solid">
+            <div className="slash-box"></div>
+        </div>
         </div>
       </div>
 
+
+
     <div>
+      
   <h2 className="section-title">Modes</h2>
   <div className="mode-switcher">
     <button 

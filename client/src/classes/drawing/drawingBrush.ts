@@ -64,24 +64,35 @@ export class drawingBrush implements Drawable {
   }
 
   // selection box logic separated
-  drawSelectionBox(ctx: CanvasRenderingContext2D, camera: { x: number; y: number; scale: number }): void {
-    const { minX, minY, maxX, maxY } = this.getBounds();
+ drawSelectionBox(
+  ctx: CanvasRenderingContext2D,
+  camera: { x: number; y: number; scale: number }
+): void {
+  const { minX, minY, maxX, maxY } = this.getBounds();
 
-    ctx.save();
-    ctx.strokeStyle = "blue";
-    // ctx.setLineDash([4, 2]);
-    ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
+  ctx.save();
 
-    const size = Shape.HANDLE_SIZE / camera.scale;
-    ctx.fillStyle = "white";
-    ctx.setLineDash([]);
-     ctx.lineWidth = 1 / camera.scale; 
-    for (const h of this.getHandles()) {
-      ctx.fillRect(h.x - size / 2, h.y - size / 2, size, size);
-      ctx.strokeRect(h.x - size / 2, h.y - size / 2, size, size);
-    }
-    ctx.restore();
+  // reset drawing state
+  ctx.setLineDash([]);
+  ctx.lineCap = "butt";
+  ctx.lineJoin = "miter";
+
+  ctx.strokeStyle = "blue";
+  ctx.lineWidth = 1 / camera.scale;
+
+  ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
+
+  const size = Shape.HANDLE_SIZE / camera.scale;
+
+  ctx.fillStyle = "white";
+
+  for (const h of this.getHandles()) {
+    ctx.fillRect(h.x - size / 2, h.y - size / 2, size, size);
+    ctx.strokeRect(h.x - size / 2, h.y - size / 2, size, size);
   }
+
+  ctx.restore();
+}
 
   // bounds helpers required by Drawable
   getLeft(): number {
